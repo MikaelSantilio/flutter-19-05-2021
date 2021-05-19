@@ -10,7 +10,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        Provider<HeroesController>.value(value: HeroesController(),)
+        ChangeNotifierProvider<HeroesController>.value(value: HeroesController(),)
       ],
       child: MaterialApp(
       title: 'Flutter Hello World',

@@ -14,15 +14,17 @@ class _HomeWidgetState extends State<HomeWidget> {
     return ListView.builder(
       itemCount: heroesController.heroes.length,
       itemBuilder: (context, index) {
-        return _buildItems(heroesController.heroes[index]);
+        return _buildItems(heroesController.heroes[index], heroesController);
       },
     );
   }
 
-  _buildItems(HeroModel model) {
+  _buildItems(HeroModel model, HeroesController heroesController) {
     return ListTile(
       onTap: (){
         print("Click");
+        model.isFavorite = !model.isFavorite;
+        heroesController.NotifyListener();
       },
       title: Text(model.name),
       trailing: model.isFavorite ? 
