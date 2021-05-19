@@ -8,4 +8,9 @@ class HeroesController extends ChangeNotifier{
     HeroModel(name: "Omniman", isFavorite: true),
     HeroModel(name: "Iron Man"),
   ];
+
+  checkFavorite(HeroModel model) {
+    isFavorite = !model.isFavorite;
+    heroesController.notifyListeners();
+  }
 }

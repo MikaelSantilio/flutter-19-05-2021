@@ -23,8 +23,7 @@ class _HomeWidgetState extends State<HomeWidget> {
     return ListTile(
       onTap: (){
         print("Click");
-        model.isFavorite = !model.isFavorite;
-        heroesController.notifyListeners();
+        heroesController.checkFavorite(model);
       },
       title: Text(model.name),
       trailing: model.isFavorite ? 
