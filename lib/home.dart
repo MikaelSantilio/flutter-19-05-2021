@@ -24,7 +24,7 @@ class _HomeWidgetState extends State<HomeWidget> {
       onTap: (){
         print("Click");
         model.isFavorite = !model.isFavorite;
-        heroesController.NotifyListener();
+        heroesController.NotifyListeners();
       },
       title: Text(model.name),
       trailing: model.isFavorite ? 
