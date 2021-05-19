@@ -45,7 +45,7 @@ class _HomeWidgetState extends State<HomeWidget> {
         leading: Consumer<HeroesController>(
           builder: (context, heroesController, widget) {
             return Text("${heroesController.heroes.where((i) => i.isFavorite).length}",
-            style: TextStyle(fontSize: 18, ));)
+            style: TextStyle(fontSize: 18, ));
           }
         ),
       ),
