@@ -41,7 +41,7 @@ class _HomeWidgetState extends State<HomeWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("TItulo"),
+        title: Text("Heroes"),
         leading: Consumer<HeroesController>(
           builder: (context, heroesController, widget) {
             return Center(child: Text("${heroesController.heroes.where((i) => i.isFavorite).length}",
