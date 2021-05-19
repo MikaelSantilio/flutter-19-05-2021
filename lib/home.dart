@@ -10,16 +10,21 @@ class HomeWidget extends StatefulWidget {
 }
 
 class _HomeWidgetState extends State<HomeWidget> {
-    _buildList(HeroesController heroesController) {
+    _buildList() {
+      HeroesController heroesController  = Provider.of<HeroesController>(context);
+
     return ListView.builder(
       itemCount: heroesController.heroes.length,
       itemBuilder: (context, index) {
-        return _buildItems(heroesController.heroes[index], heroesController);
+        return _buildItems(heroesController.heroes[index]);
       },
     );
   }
 
-  _buildItems(HeroModel model, HeroesController heroesController) {
+  _buildItems(HeroModel model) {
+
+    HeroesController heroesController  = Provider.of<HeroesController>(context);
+
     return ListTile(
       onTap: (){
         print("Click");
@@ -39,7 +44,7 @@ class _HomeWidgetState extends State<HomeWidget> {
         title: Text("TItulo"),
       ),
       body: Consumer<HeroesController>(builder: (context, heroesController, widget) {
-        return _buildList(heroesController);
+        return _buildList();
       }),
     );
   }
