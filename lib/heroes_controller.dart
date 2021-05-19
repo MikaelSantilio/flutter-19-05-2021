@@ -11,6 +11,6 @@ class HeroesController extends ChangeNotifier{
 
   checkFavorite(HeroModel model) {
     model.isFavorite = !model.isFavorite;
-    heroesController.notifyListeners();
+    notifyListeners();
   }
 }
